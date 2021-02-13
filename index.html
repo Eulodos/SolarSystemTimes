@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Times</title>
+    <script src="https://kit.fontawesome.com/f03b15ad26.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">
+                    Home
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <div id="navDate"></div>
+                        <span class="icon is-large">
+                            <i class="fas fa-meteor"></i>
+                        </span>
+                        <div>Today's closest asteroid to Earth is: <span id="dailyAsteroid"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="columns is-centered mt-2">
+        <p class="is-size-3">Astronomical picture of the day</p>
+    </div>
+    <div class="columns is-centered mt-2">
+        <label for="apodDate" class="blockLabel is-size-4">Select date for the daily picture you would like to
+            see</label>
+    </div>
+    <div class="columns is-centered mt-2">
+        <div class="field is-grouped is-grouped-centered">
+            <p class="control"><input type="date" id="apodDate" name="trip-start" class="input is-medium is-dark"
+                    min="1995-06-16"></p>
+            <p class="control">
+                <button class="button is-medium is-dark modal-button" id="dailyPic" data-target="modal-bis">
+                    <span class="icon is-medium">
+                        <i class="fas fa-satellite"></i>
+                    </span>
+                    <span>Get Picture</span>
+                    <span class="icon is-medium">
+                        <i class="fas fa-satellite fa-flip-horizontal"></i>
+                    </span>
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <div class="columns is-centered mt-4">
+        <p class="is-size-3 mb-4 title">List of asteroids near Earth today:</p>
+    </div>
+    <div class="columns is-centered mt-4">
+        <table class="table" id="allAsteroids">
+            <thead>
+                <tr>
+                    <th class="is-dark">Name</th>
+                    <th class="is-dark">Absolute Magnitude(H)</th>
+                    <th class="is-dark">Estimated Diameter min(m)</th>
+                    <th class="is-dark">Estimated Diameter max(m)</th>
+                    <th class="is-dark">Hazardous</th>
+                    <th class="is-dark">Full Date of closest approach</th>
+                    <th class="is-dark">Relative Velocity(km/h)</th>
+                    <th class="is-dark">Miss Distance(km)</th>
+                    <th class="is-dark">Is Sentry monitored</th>
+                    <th class="is-dark">Orbiting Body</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content">
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="card">
+                    <p class="modal-card-title has-text-centered">Astronomical Picture of the day is:</p>
+                    <div class="card-image">
+                        <figure class="image">
+                            <!-- Daily image goes here -->
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            </div>
+                            <div class="media-content" id="picAddInfo">
+                                <!-- Title and Author -->
+                            </div>
+                        </div>
+                        <!-- .content - Description -->
+                    </div>
+                </div>
+                <!-- <p class="image is-4by3">
+                            </p> -->
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
