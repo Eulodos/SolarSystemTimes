@@ -1,1 +1,1 @@
-"# Sample project in plain JS consuming NASA API" 
+"Sample project in plain JS consuming NASA API" 
